@@ -92,7 +92,7 @@ namespace KatFetch
                 {
                     HtmlElement p = null;
                     HtmlElement ap = null;
-                    foreach (HtmlElement ep in wb2.Document.GetElementsByTagName("a"))
+                    foreach (HtmlElement ep in wb.Document.GetElementsByTagName("a"))
                     {
                         if (ep.InnerText == "download")
                         {
@@ -177,7 +177,7 @@ namespace KatFetch
                         break;
                     }
                 }
-                foreach (HtmlElement ep in wb.Document.GetElementsByTagName("div"))
+                foreach (HtmlElement ep in wb2.Document.GetElementsByTagName("div"))
                 {
                     if (ep.GetAttribute("className") == "submission_code_wrapper")
                     {
@@ -189,7 +189,7 @@ namespace KatFetch
               
                 var name = url.Split('/')[6].Split('.');
 
-                File.WriteAllText("./dl/" + solutions[index].ID + "." + name[1], ap.InnerText);
+                File.WriteAllText("./dl/" + solutions2[index2].ID + "." + name[1], ap.InnerText);
                 index2++;
                 progressBar1.Invoke(new Action(() => progressBar1.Increment(1)));
                 wb2.Navigate(solutions2[index2].Url);
