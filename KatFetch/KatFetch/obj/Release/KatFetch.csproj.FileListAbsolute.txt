@@ -1,0 +1,9 @@
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\bin\Release\KatFetch.exe.config
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\bin\Release\KatFetch.exe
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\bin\Release\KatFetch.pdb
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.Form1.resources
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.Properties.Resources.resources
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.csproj.GenerateResource.Cache
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.exe
+C:\Users\Klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.pdb
+C:\Users\Klas\Documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Release\KatFetch.csprojResolveAssemblyReference.cache
