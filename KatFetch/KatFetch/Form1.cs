@@ -19,8 +19,6 @@ namespace KatFetch
         private int index2 = 0;
         private List<Solution> solutions = new List<Solution>();
         private List<Solution> solutions2;
-        private WebClient wc = new WebClient();
-        private WebClient wc2 = new WebClient();
         public Form1()
         {
             InitializeComponent();
@@ -93,18 +91,29 @@ namespace KatFetch
                 if (index < solutions.Count)
                 {
                     HtmlElement p = null;
-                    foreach (HtmlElement ep in wb.Document.GetElementsByTagName("a"))
+                    HtmlElement ap = null;
+                    foreach (HtmlElement ep in wb2.Document.GetElementsByTagName("a"))
                     {
-                        if(ep.InnerText == "download")
+                        if (ep.InnerText == "download")
                         {
                             p = ep;
                             break;
                         }
                     }
+                    foreach (HtmlElement ep in wb.Document.GetElementsByTagName("div"))
+                    {
+                        if (ep.GetAttribute("className") == "submission_code_wrapper")
+                        {
+                            ap = ep;
+                            break;
+                        }
+                    }
                     var url = p?.GetAttribute("href");
+
                     var name = url.Split('/')[6].Split('.');
 
-                    wc.DownloadFile(url, "./dl/" + solutions[index].ID +"."+ name[1]);
+                    File.WriteAllText("./dl/" + solutions[index].ID + "." + name[1], ap.InnerText);
+
                     index++;
                     progressBar1.Invoke(new Action(() => progressBar1.Increment(1)));
                     wb.Navigate(solutions[index].Url);
@@ -156,9 +165,10 @@ namespace KatFetch
             if (!Directory.Exists("./dl"))
                 Directory.CreateDirectory("./dl");
 
-            if (index < solutions.Count)
+            if (index2 < solutions2.Count)
             {
                 HtmlElement p = null;
+                HtmlElement ap = null;
                 foreach (HtmlElement ep in wb2.Document.GetElementsByTagName("a"))
                 {
                     if (ep.InnerText == "download")
@@ -167,11 +177,19 @@ namespace KatFetch
                         break;
                     }
                 }
+                foreach (HtmlElement ep in wb.Document.GetElementsByTagName("div"))
+                {
+                    if (ep.GetAttribute("className") == "submission_code_wrapper")
+                    {
+                        ap = ep;
+                        break;
+                    }
+                }
                 var url = p?.GetAttribute("href");
               
                 var name = url.Split('/')[6].Split('.');
 
-                wc2.DownloadFile(url, "./dl/" + solutions[index].ID + "." + name[1]);
+                File.WriteAllText("./dl/" + solutions[index].ID + "." + name[1], ap.InnerText);
                 index2++;
                 progressBar1.Invoke(new Action(() => progressBar1.Increment(1)));
                 wb2.Navigate(solutions2[index2].Url);
@@ -190,6 +208,11 @@ namespace KatFetch
             wb2.DocumentCompleted += Wb2_DocumentCompleted;
             wb2.ScriptErrorsSuppressed = true;
             wb.ScriptErrorsSuppressed = true;
+        }
+
+        private void wb_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
         }
     }
 }

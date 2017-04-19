@@ -49,7 +49,7 @@
             this.groupBox1.Controls.Add(this.wb);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(441, 463);
+            this.groupBox1.Size = new System.Drawing.Size(787, 463);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -59,8 +59,9 @@
             this.wb.Location = new System.Drawing.Point(3, 16);
             this.wb.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb.Name = "wb";
-            this.wb.Size = new System.Drawing.Size(435, 444);
+            this.wb.Size = new System.Drawing.Size(781, 444);
             this.wb.TabIndex = 1;
+            this.wb.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wb_DocumentCompleted);
             // 
             // button1
             // 
@@ -100,9 +101,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.wb2);
-            this.groupBox2.Location = new System.Drawing.Point(409, 37);
+            this.groupBox2.Location = new System.Drawing.Point(805, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(441, 463);
+            this.groupBox2.Size = new System.Drawing.Size(697, 463);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
@@ -112,7 +113,7 @@
             this.wb2.Location = new System.Drawing.Point(3, 16);
             this.wb2.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb2.Name = "wb2";
-            this.wb2.Size = new System.Drawing.Size(435, 444);
+            this.wb2.Size = new System.Drawing.Size(691, 444);
             this.wb2.TabIndex = 1;
             // 
             // button2
@@ -129,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 512);
+            this.ClientSize = new System.Drawing.Size(1514, 512);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.progressBar1);
