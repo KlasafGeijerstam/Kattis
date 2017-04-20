@@ -214,5 +214,42 @@ namespace KatFetch
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var p = Directory.GetFiles("./dl");
+            
+            foreach (var f in p)
+            {
+                var arr = File.ReadAllLines(f);
+                var list = new List<string>();
+                
+                var index = 0;
+                while (IsWhite(arr[index]))
+                    index++;
+                list.Add(arr[index]);
+                bool add = true;
+                for (int i = index+1; i < arr.Length; i++)
+                {
+                    add = !add;
+                    if (add)
+                        list.Add(arr[i]);
+                }
+                File.WriteAllLines(f, list.ToArray()); 
+            }
+        }
+        private bool IsWhite(string s)
+        {
+            bool white = true;
+            foreach (var c in s)
+            {
+                if(c != ' ' && c != '\t')
+                {
+                    white = false;
+                    break;
+                }
+            }
+            return white;
+        }
     }
 }

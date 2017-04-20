@@ -7,3 +7,12 @@ c:\users\klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Deb
 c:\users\klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Debug\KatFetch.csproj.GenerateResource.Cache
 c:\users\klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Debug\KatFetch.exe
 c:\users\klas\documents\visual studio 2015\Projects\KattisFetch\KatFetch\obj\Debug\KatFetch.pdb
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\bin\Debug\KatFetch.exe.config
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.exe
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.pdb
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\bin\Debug\KatFetch.exe
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\bin\Debug\KatFetch.pdb
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.csprojResolveAssemblyReference.cache
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.Form1.resources
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.Properties.Resources.resources
+C:\Users\Klas\Desktop\Solutions\KatFetch\KatFetch\obj\Debug\KatFetch.csproj.GenerateResource.Cache
