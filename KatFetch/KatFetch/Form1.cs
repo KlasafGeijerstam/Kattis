@@ -65,7 +65,7 @@ namespace KatFetch
                         }
                     }
                     var btn = wb.Document.GetElementById("problem_list_next");
-                    if (btn == null || btn.OuterHtml.Contains("disabled"))
+                    //if (btn == null || btn.OuterHtml.Contains("disabled"))
                     {
                         progressBar1.Maximum = solutions.Count;
                         progressBar1.Value = 0;
@@ -75,8 +75,8 @@ namespace KatFetch
                         wb.Navigate(solutions[index].Url);
                         wb2.Navigate(solutions2[index2].Url);
                     }
-                    else
-                        btn.InvokeMember("click");
+                    //else
+                      //  btn.InvokeMember("click");
                 }
                 catch (Exception ass)
                 {
