@@ -54,10 +54,12 @@ namespace KatFetch
                     {
                         if (i.Children[3].OuterText != "Accepted")
                             continue;
-                        var s = new Solution();
-                        s.Url = i.Children[0].Children[0].GetAttribute("href");
-                        s.ID = i.Children[2].Children[0].GetAttribute("href").Split('/')[4];
-                        s.Language = i.Children[5].InnerText;
+                        var s = new Solution()
+                        {
+                            Url = i.Children[0].Children[0].GetAttribute("href"),
+                            ID = i.Children[2].Children[0].GetAttribute("href").Split('/')[4],
+                            Language = i.Children[5].InnerText
+                        };
                         if (!solutions.Contains(s))
                         {
                             Console.WriteLine(s);
