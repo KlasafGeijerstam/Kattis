@@ -1,0 +1,11 @@
+public static double Factorial(double p)
+{
+  if (p < 1)
+    return 1;
+  return p * Factorial(p - 1);
+}
+
+public static double Derangement(double p)
+{
+  return Math.Floor((Factorial(p) + 1) / Math.E);
+}
