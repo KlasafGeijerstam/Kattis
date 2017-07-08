@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	while (true)
+while (true)
 	{
 		int cases;
 		cin >> cases;
