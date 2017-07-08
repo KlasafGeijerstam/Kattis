@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-while (true)
+	while (true)
 	{
 		int cases;
 		cin >> cases;
@@ -24,7 +24,7 @@ while (true)
 			{
 				if (prev == p[j] && (prev == 'a' || prev == 'e' || prev == 'i' || prev == 'o' || prev == 'u' || prev == 'y'))
 					lp++;
-				prev = p[j];
+					prev = p[j];
 			}
 			if (lp > pairs) {
 				fav = p;
@@ -32,6 +32,6 @@ while (true)
 			}
 		}
 		cout << fav << endl;
-	}
+		}
 	return 0;
 }
