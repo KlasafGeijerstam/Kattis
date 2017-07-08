@@ -3,25 +3,17 @@ import java.util.Scanner;
 public class main{
 
     public static void main(String[] args) throws Exception {
-
         Scanner sc = new Scanner(System.in);
 
         while(sc.hasNextLine()){
-
             char[] s = sc.nextLine().toCharArray();
-
             for(char c : s)
-
                 System.out.print(p(c));
-
             System.out.println();
-
         }
-
     }
 
     static char p(char kek){
-
         switch (kek){
             case 'A':
                 kek = 'A';
