@@ -19,7 +19,6 @@ namespace Kattis
             var bst = new string(b).Replace("#","");
             Console.WriteLine(ast.Length > 0 ? int.Parse(ast).ToString() : "YODA");
             Console.WriteLine(bst.Length > 0 ? int.Parse(bst).ToString() : "YODA");
-            Console.ReadLine();
         }
     }
 }
