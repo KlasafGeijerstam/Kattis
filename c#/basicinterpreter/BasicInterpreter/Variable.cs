@@ -4,6 +4,7 @@ namespace BasicInterpreter
 {
     internal class Variable
     {
+        enum VariableType { Constant,StringConstant,Variable };
         private string identifier;
         private object value;
         private VariableType type;
