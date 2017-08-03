@@ -1,43 +1,44 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Kattis
 {
-  public class Program
-  {
-    public static void Main()
+    public class Program
     {
-        List<string> lst = new List<string>();
-        
-        string s;
-        while((s = Console.ReadLine()) != null)
+        public static void Main()
         {
-            var p = s.Split(' ');
-            
-            bool frst = true;
-            foreach(var ss in p)
+            var lst = new HashSet<string>();
+            string s;
+            var sb = new StringBuilder();
+            while ((s = Console.ReadLine()) != null)
             {
-                if(!lst.Contains(ss.ToLower()))
+                var p = s.Split(' ');
+
+                bool frst = true;
+                foreach (var ss in p)
                 {
-                    lst.Add(ss.ToLower());
-                    if(!frst)
-                        Console.Write(" " +ss);
+                    if (!lst.Contains(ss.ToLower()))
+                    {
+                        lst.Add(ss.ToLower());
+                        if (!frst)
+                            sb.Append(" " + ss);
+                        else
+                            sb.Append(ss);
+                    }
                     else
-                        Console.Write(ss);
+                    {
+                        if (!frst)
+                            sb.Append(" .");
+                        else
+                            sb.Append(".");
+                    }
+                    frst = false;
                 }
-                else
-                {
-                    if(!frst)
-                        Console.Write(" .");
-                    else
-                        Console.Write(".");
-                }
-                frst = false;
+                sb.Append("\n");
             }
-            Console.Write("\n");
+            Console.WriteLine(sb);
         }
-        
     }
-  }
 }
