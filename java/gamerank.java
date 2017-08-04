@@ -25,7 +25,6 @@ public class main {
                 }
             }
             else{
-                
                 if(rank < 21 && rank != 0)
                     stars--;
                 if(rank == 20 && stars < 0)
