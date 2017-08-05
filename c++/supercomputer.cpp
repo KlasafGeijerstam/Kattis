@@ -42,7 +42,7 @@ int main()
     long n, k;
     cin >> n >> k;
     auto f = fenwick(n);
-    char* val = (char*)calloc(n + 1,sizeof(char));
+    bool* val = (bool*)calloc(n + 1,sizeof(bool));
     char v;
     long l, r;
     for (int i = 0; i < k; i++)
@@ -53,11 +53,11 @@ int main()
             cin >> l;
             if (val[l]) {
                 f.increment(l, -1);
-                val[l] = 0;
+                val[l] = false;
             }
             else {
                 f.increment(l, 1);
-                val[l] = 1;
+                val[l] = true;
             }
         }
         else 
