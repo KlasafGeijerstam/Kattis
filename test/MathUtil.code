@@ -1,0 +1,22 @@
+//N over x
+long nchooseX(long n, long x){
+  return fact(n)/(fact(x)*fact(n-x));
+}
+
+//Factorial
+long fact(long i){
+  if(i < 2) 
+    return 1;
+  else 
+    return i*fact(i-1);
+}
+
+//Greatest common divisor
+long gcd(long n, long m){
+return m != 0 ? gcd(m, n%m) : n;
+}
+
+//Lowest common divisor
+long lcd(long n, long m){
+  return (Math.abs(n*m))/gcd(n, m);
+}
