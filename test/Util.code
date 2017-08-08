@@ -20,3 +20,15 @@ return m != 0 ? gcd(m, n%m) : n;
 long lcd(long n, long m){
   return (Math.abs(n*m))/gcd(n, m);
 }
+
+//Find closest number to num in n
+int closest(int num, std::vector<int> n) 
+{
+    int curr = n[0];
+    for (const auto& c : n)
+    {
+        if (abs(num - c) < abs(num - curr))
+            curr = c;
+    }
+    return curr;
+}
