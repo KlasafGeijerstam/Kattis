@@ -25,10 +25,8 @@ int closest(int num, std::vector<int> n)
 {
     int curr = n[0];
     for (const auto& c : n)
-    {
         if (abs(num - c) < abs(num - curr))
             curr = c;
-    }
     return curr;
 }
 
@@ -102,13 +100,9 @@ int main()
     pam.insert(pam.begin(), val.begin(), val.end());
     std::sort(pam.begin(), pam.end());
     for (int i = 1; i < 201; i++)
-    {
         dic[i] = closest(i, pam);
-    }
     for (const auto& v : dic) 
-    {
-        std::cout << "dic[" << v.first << "] = " << v.second << std::endl;
-    }
+         std::cout << "dic[" << v.first << "] = " << v.second << ";" << std::endl;
     int p;
     std::cin >> p;
     
