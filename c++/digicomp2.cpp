@@ -74,8 +74,6 @@ int main()
     tree[0].visited = false;
     tree[0].mod();
     for (int i = 1; i <= m; i++)
-    {
         std::cout << ((even(tree[i].ballz) ? tree[i].v : !tree[i].v) ? 'L' : 'R');
-    }
     std::cout << std::endl;
 }
