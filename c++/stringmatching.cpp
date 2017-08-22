@@ -8,7 +8,6 @@
 
 std::string s, w;
 std::vector<int> t(1000000);
-int pm;
 
 bool match(int i)
 {
