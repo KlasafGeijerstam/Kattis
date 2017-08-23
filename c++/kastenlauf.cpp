@@ -27,7 +27,7 @@ void move(int k)
         return;
     }
     for (int c = 0; c < p.size(); c++)
-        if (!p[c].v &&  DIST(p[k], p[c]) / 50.0 <= 20)
+        if (!p[c].v && DIST(p[k], p[c]) / 50.0 <= 20)
             move(c);
 }
 
