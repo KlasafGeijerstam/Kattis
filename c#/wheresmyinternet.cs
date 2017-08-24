@@ -10,31 +10,31 @@ namespace Kattis
 
         static void Main(string[] args)
         {
-            Scanner sc = new Scanner ();
-            int hc = sc.NextInt();
-            int nc = sc.NextInt();
-            Dictionary<int,Node> hses = new Dictionary<int,Node>();
+            var sc = new Scanner ();
+            var hc = sc.NextInt();
+            var nc = sc.NextInt();
+            var hses = new Dictionary<int,Node>();
 
 
             for(int i = 0; i < hc; i++){
                 hses.Add(i+1, new Node(i+1));
             }
             for(int i = 0; i < nc; i++){
-                int h1 = sc.NextInt();
-                int h2 = sc.NextInt();
+                var h1 = sc.NextInt();
+                var h2 = sc.NextInt();
 
 
-                Node hs1 = hses[h1];
-                Node hs2 = hses[h2];
+                var hs1 = hses[h1];
+                var hs2 = hses[h2];
 
                 hs1.cns.Add(hs2);
                 hs2.cns.Add(hs1);
 
             }
 
-            Node internetz = hses[1];
+            var internetz = hses[1];
             hasInternetz(internetz);
-            bool wr = false;
+            var wr = false;
             foreach(var n in hses){
                 if(!n.Value.visited){
                     Console.WriteLine(n.Value.num);
