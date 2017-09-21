@@ -109,7 +109,6 @@ namespace Kattis
                     r += Gets(pep[i] - '0')[j] + (i < pep.Length - 1 ? "." : "");
                 Console.WriteLine(r);
             }
-            Console.ReadLine();
         }
     }
 } 
