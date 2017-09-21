@@ -34,45 +34,25 @@ namespace Kattis
         {
             var s = new string[7];
             if (i == 0)
-            {
                 s[0] = "xxxxx" ; s[1] = "x...x" ; s[2] = "x...x" ; s[3] = "x...x" ; s[4] = "x...x" ; s[5] = "x...x" ; s[6] = "xxxxx";
-            }
             else if (i == 1)
-            {
                 s[0] = "....x" ; s[1] = "....x" ; s[2] = "....x" ; s[3] = "....x" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "....x";
-            }
             else if (i == 2)
-            {
                 s[0] = "xxxxx" ; s[1] = "....x" ; s[2] = "....x" ; s[3] = "xxxxx" ; s[4] = "x...." ; s[5] = "x...." ; s[6] = "xxxxx";
-            }
             else if (i == 3)
-            {
                 s[0] = "xxxxx" ; s[1] = "....x" ; s[2] = "....x" ; s[3] = "xxxxx" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "xxxxx";
-            }
             else if (i == 4)
-            {
                 s[0] = "x...x" ; s[1] = "x...x" ; s[2] = "x...x" ; s[3] = "xxxxx" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "....x";
-            }
             else if (i == 5)
-            {
                 s[0] = "xxxxx" ; s[1] = "x...." ; s[2] = "x...." ; s[3] = "xxxxx" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "xxxxx";
-            }
             else if (i == 6)
-            {
                 s[0] = "xxxxx" ; s[1] = "x...." ; s[2] = "x...." ; s[3] = "xxxxx" ; s[4] = "x...x" ; s[5] = "x...x" ; s[6] = "xxxxx";
-            }
             else if (i == 7)
-            {
                 s[0] = "xxxxx" ; s[1] = "....x" ; s[2] = "....x" ; s[3] = "....x" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "....x";
-            }
             else if (i == 8)
-            {
                 s[0] = "xxxxx" ; s[1] = "x...x" ; s[2] = "x...x" ; s[3] = "xxxxx" ; s[4] = "x...x" ; s[5] = "x...x" ; s[6] = "xxxxx";
-            }
             else if (i == 9)
-            {
                 s[0] = "xxxxx" ; s[1] = "x...x" ; s[2] = "x...x" ; s[3] = "xxxxx" ; s[4] = "....x" ; s[5] = "....x" ; s[6] = "xxxxx";
-            }
             return s;
         }
 
