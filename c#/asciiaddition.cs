@@ -4,7 +4,6 @@ namespace Kattis
 {
     public class Program
     {
-
         static int Get(string[] s)
         {
             if      (s[0] == "xxxxx" && s[1] == "x...x" && s[2] == "x...x" && s[3] == "x...x" && s[4] == "x...x" && s[5] == "x...x" && s[6] == "xxxxx")
