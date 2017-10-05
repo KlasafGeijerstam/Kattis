@@ -2,16 +2,15 @@ using System;
 
 namespace Kattis
 {
-  public class Program
-  {
-    public static void Main()
+    public class Program
     {
-        string s;
-        while((s = Console.ReadLine()) != null)
+        public static void Main()
         {
-            Console.WriteLine(s.IndexOf("problem",StringComparison.OrdinalIgnoreCase) >= 0 ? "yes" : "no");
+            string s;
+            while((s = Console.ReadLine()) != null)
+            {
+                Console.WriteLine(s.IndexOf("problem",StringComparison.OrdinalIgnoreCase) >= 0 ? "yes" : "no");
+            }
         }
-        
     }
-  }
 }
