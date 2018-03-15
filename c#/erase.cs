@@ -12,21 +12,11 @@ namespace Kattis
             var s2 = Console.ReadLine();
             bool error = false;
             if(i % 2 == 0)
-            {
-                for (int j = 0; j < s.Length; j++)
-                {
-                    if (s[j] != s2[j])
-                        error = true;
-                }
-            }
+                error = s != s2;
             else
-            {
                 for (int j = 0; j < s.Length; j++)
-                {
                     if (s[j] == s2[j])
                         error = true;
-                }
-            }
             Console.WriteLine(error ? "Deletion failed" : "Deletion succeeded");
         }
     }
