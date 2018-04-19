@@ -29,7 +29,7 @@ namespace Kattis
         static bool b(char c)
         {
             c = c.ToString().ToLower()[0];
-            return (c > '0' && <= '9') || (c >= 'a' || c <= 'f');
+            return (c >= '0' && <= '9') || (c >= 'a' || c <= 'f');
         }
     }
 }
