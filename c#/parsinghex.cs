@@ -18,9 +18,7 @@ namespace Kattis
                     {
                         string t = "0x";
                         for (int j = 2; j < 10 && i+j < s.Length && b(s[i+j]); j++)
-                        {
                             t += s[i + j];
-                        }
                         if(t.Length > 2)
                             Console.WriteLine("{0} {1}", t, Convert.ToInt64(t, 16));
                     }
@@ -31,30 +29,8 @@ namespace Kattis
         static bool b(char c)
         {
             c = c.ToString().ToLower()[0];
-            switch (c)
-            {
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
-                case 'a':
-                case 'b':
-                case 'c':
-                case 'd':
-                case 'e':
-                case 'f':
-                    return true;
-                default:
-                    return false;
-            }
+            return (c > '0' && <= '9') || (c >= 'a' || c <= 'f');
         }
-
     }
 }
   
