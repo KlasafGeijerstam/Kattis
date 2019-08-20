@@ -1,74 +1,76 @@
 #include <iostream>
+#include <map>
+#include <string>
 #include <vector>
 
 class UnionFind
 {
 public:
-    UnionFind(long items) :
-        parents(items),
-        ranks(items, 1)
-    {
-        for (long i{ 0 }; i < items; ++i)
-        {
-            parents[i] = i;
-        }
-    }
+	UnionFind(int items) :
+		parents(items),
+		ranks(items, 1)
+	{
+		for (int i{ 0 }; i < items; ++i)
+		{
+			parents[i] = i;
+		}
+	}
 
-    void link(long left, long right)
-    {
-        long ri{ find(left) };
-        long rj{ find(right) };
+	void link(int left, int right)
+	{
+		int ri{ find(left) };
+		int rj{ find(right) };
 
-        if (ri == rj)
-        {
-            return;
-        }
+		if (ri == rj)
+		{
+			return;
+		}
 
-        if (ranks[ri] < ranks[rj])
-        {
-            parents[ri] = rj;
-            ranks[rj] += ranks[ri];
-        }
-        else
-        {
-            parents[rj] = ri;
-            ranks[ri] += ranks[rj];
-        }
-    }
+		if (ranks[ri] < ranks[rj])
+		{
+			parents[ri] = rj;
+			ranks[rj] += ranks[ri];
+		}
+		else
+		{
+			parents[rj] = ri;
+			ranks[ri] += ranks[rj];
+		}
+	}
 
-    long find(long item)
-    {
-        long root{ item };
+	int find(int item)
+	{
+		int root{ item };
 
-        while (root != parents[root])
-        {
-            root = parents[root];
-        }
+		while (root != parents[root])
+		{
+			root = parents[root];
+		}
 
-        while (item != root)
-        {
-            long parent{ parents[item] };
+		while (item != root)
+		{
+			int parent{ parents[item] };
 
-            parents[item] = root;
-            item = parent;
-        }
+			parents[item] = root;
+			item = parent;
+		}
 
-        return root;
-    }
+		return root;
+	}
 
-    long size(long item)
-    {
-        return ranks[find(item)];
-    }
+	int size(int item)
+	{
+		return ranks[find(item)];
+	}
 
 private:
-    std::vector<long> parents;
-    std::vector<long> ranks;
+    std::vector<int> parents;
+    std::vector<int> ranks;
 };
 
 int main() {
     std::ios_base::sync_with_stdio(false);
-    long n, q, a, b;
+    int n, q, a, b;
     char c;
     std::cin >> n >> q;
     UnionFind uf = *(new UnionFind(n));
@@ -76,7 +78,8 @@ int main() {
         std::cin >> c >> a >> b;
         if(c == '?')
             std::cout << (uf.find(b) == uf.find(a) ? "yes" : "no") << std::endl;
-        else
+        else {
             uf.link(a,b);        
+        }
     }
 }

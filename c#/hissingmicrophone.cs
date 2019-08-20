@@ -1,9 +1,12 @@
 using System;
 
-class Program
+namespace Csharp
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine(Console.ReadLine().Contains("ss") ? "hiss" : "no hiss");
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Console.ReadLine().Contains("ss") ? "hiss" : "no hiss");
+        }
     }
 }
