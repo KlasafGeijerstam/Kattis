@@ -49,8 +49,16 @@ fn main() -> io::Result<()> {
     Ok(())
 }
 
-fn read_ints() -> Result<Vec<u32>, io::Error> {
-    let mut k = String::new();
-    io::stdin().read_line(&mut k)?;
-    Ok(k.trim().split(" ").map(|x| x.parse().unwrap()).collect())
+fn main_alt() -> io::Result<()> {
+    let l = read_ints()?;
+    let d = l[0];
+    let mut rects = vec![(d - l[1], d - l[2]),
+                        (l[1], d - l[2]),
+                        (d - l[1], l[2]),
+                        (l[1], l[2])];
+    rects.sort();
+    rects.reverse();
+
+    println!("{}", rects[0].0 * rects[0].1 * 4);
+    Ok(())
 }
