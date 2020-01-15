@@ -35,6 +35,12 @@ impl cmp::PartialEq for Rect {
     }
 }
 
+fn read_ints() -> Result<Vec<u32>, io::Error> {
+    let mut k = String::new();
+    io::stdin().read_line(&mut k)?;
+    Ok(k.trim().split(" ").map(|x| x.parse().unwrap()).collect())
+}
+
 fn main() -> io::Result<()> {
     let l = read_ints()?;
     let d = l[0];
@@ -49,6 +55,7 @@ fn main() -> io::Result<()> {
     Ok(())
 }
 
+//Does not use Rect struct
 fn main_alt() -> io::Result<()> {
     let l = read_ints()?;
     let d = l[0];
