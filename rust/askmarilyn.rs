@@ -1,11 +1,9 @@
 use std::io;
 
 fn main() -> io::Result<()> {
-    let mut z: u64 = 20170705;
-    let a: u64 = 742938285;
-    let m: u64 = 21700000;
+    let mut (z, a, m) = (20170705, 742938285, 21700000);
     let mut k = String::new();
-
+    
     for _ in 0..1000 {
         z = a * z % m;
         let ch =  ((z % 3) as u8 + 65) as char;
@@ -25,6 +23,5 @@ fn main() -> io::Result<()> {
 
         k.clear();
     }
-
     Ok(())
 }
