@@ -2,11 +2,13 @@ use std::cmp::Ordering;
 use std::ops::*;
 
 pub trait PointTrait: Copy + Clone + PartialOrd
-                     + Add + Sub<Self, Output = Self> + AddAssign 
-                     + SubAssign + Zero + Mul<Self, Output = Self> {}
+                     + Add<Output = Self> + Sub<Self, Output = Self> + AddAssign 
+                     + SubAssign + Zero + Mul<Self, Output = Self>
+                     + MulAssign<Self> + DivAssign<Self> {}
 impl<T> PointTrait for T where T: Copy + Clone + PartialOrd
-                                + Add + Sub<T, Output = T> + AddAssign
-                                + SubAssign + Zero + Mul<T, Output = T> {}
+                                + Add<Output = T> + Sub<T, Output = T> + AddAssign
+                                + SubAssign + Zero + Mul<T, Output = T>
+                                + MulAssign<T> + DivAssign<T> {}
 
 #[derive(Copy, Clone, PartialOrd, PartialEq, Debug, Hash)]
 pub struct Point<T: PointTrait> {
@@ -20,12 +22,16 @@ impl<T: PointTrait> Point<T> {
         Point { x, y }
     }
 
-    pub fn cross(&self, other: &Point<T>) -> T {
+    pub fn cross(&self, other: &Self) -> T {
         self.x * other.y - self.y * other.x
     }
 
-    pub fn cross2(&self, a: &Point<T>, b: &Point<T>) -> T {
+    pub fn cross2(&self, a: &Self, b: &Self) -> T {
         (*a - *self).cross(&(*b - *self))
+    }
+
+    pub fn dot(&self, o: &Self) -> T {
+        self.x * o.x + self.y * o.x
     }
 
 }
@@ -83,6 +89,24 @@ impl<T: PointTrait> Ord for Point<T> {
     }
 }
 
+impl<T: PointTrait> Mul<T> for Point<T> {
+    type Output = Self;
+    fn mul(mut self, f: T) -> Self {
+        self.x *= f;
+        self.y *= f;
+        self
+    }
+}
+
+impl<T: PointTrait> Div<T> for Point<T> {
+    type Output = Self;
+    fn div(mut self, f: T) -> Self {
+        self.x /= f;
+        self.y /= f;
+        self
+    }
+}
+
 
 pub trait Zero {
     fn zero() -> Self;
@@ -95,6 +119,18 @@ impl Zero for f64 {
 }
 
 impl Zero for i32 {
+    fn zero() -> Self {
+        0
+    }
+}
+
+impl Zero for i64 {
+    fn zero() -> Self {
+        0
+    }
+}
+
+impl Zero for i128 {
     fn zero() -> Self {
         0
     }
