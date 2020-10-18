@@ -11,7 +11,7 @@ fn main() -> Result<()> {
         }
 
         let cans: Vec<_> = l.collect();
-	let sum: u16 = cans.iter().sum();
+        let sum: u16 = cans.iter().sum();
         let sub_set_sum: u16 = sum / 2;
         let mut memo = vec![false; sub_set_sum as usize + 1];
         memo[0] = true;
