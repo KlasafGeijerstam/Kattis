@@ -25,8 +25,8 @@ impl Canvas {
             length,
             height,
             parts: UnionFind::new(length * height),
-            roots: HashSet::new(),
-            moves: Vec::new(),
+            roots: HashSet::with_capacity(10000),
+            moves: Vec::with_capacity(10000),
         }
     }
 
@@ -62,18 +62,10 @@ impl Canvas {
             for y in y1..=y2 {
                 if self.index_n(x, y) == move_index {
                     *self.index(x, y) = EMPTY;
-                }
-            }
-        }
-
-        for x in x1..=x2 {
-            for y in y1..=y2 {
-                if self.index_n(x, y) == EMPTY {
                     self.join_around(x, y);
                 }
             }
         }
-
     }
 
     fn init_parts(&mut self) {
@@ -92,29 +84,27 @@ impl Canvas {
     }
 
     fn join_around(&mut self, x: usize, y: usize) {
+        let root = self.parts.find(self.gindex(x as usize, y as usize));
+        self.roots.remove(&root);
         if x < self.length - 1 && self.index_n(x + 1, y) == EMPTY {
-            let (old, new) = self.parts.union(self.gindex(x, y),
+            let (old, _) = self.parts.union(self.gindex(x, y),
                                         self.gindex(x + 1, y));
             self.roots.remove(&old);
-            self.roots.insert(new);
         }
         if x > 0 && self.index_n(x - 1, y) == EMPTY {
-            let (old, new) = self.parts.union(self.gindex(x, y),
+            let (old, _) = self.parts.union(self.gindex(x, y),
                                         self.gindex(x - 1, y));
             self.roots.remove(&old);
-            self.roots.insert(new);
         }
         if y < self.height - 1 && self.index_n(x, y + 1) == EMPTY {
-            let (old, new) = self.parts.union(self.gindex(x, y),
+            let (old, _) = self.parts.union(self.gindex(x, y),
                                         self.gindex(x, y + 1));
             self.roots.remove(&old);
-            self.roots.insert(new);
         }
         if y > 0 && self.index_n(x, y - 1) == EMPTY {
-            let (old, new) = self.parts.union(self.gindex(x, y),
+            let (old, _) = self.parts.union(self.gindex(x, y),
                                         self.gindex(x, y - 1));
             self.roots.remove(&old);
-            self.roots.insert(new);
         }
         let root = self.parts.find(self.gindex(x as usize, y as usize));
         self.roots.insert(root);
