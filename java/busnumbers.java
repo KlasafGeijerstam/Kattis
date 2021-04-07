@@ -19,30 +19,32 @@ public class Main {
         
         int len = sc.getInt();
         int[] l = new int[len];
-        for(int i = 0; i < len; i++)
+        for(int i = 0; i < len; i++) {
             l[i] = sc.getInt();
+        }
 
         Arrays.sort(l);
         int start = -1;
         int end = -1;
         boolean first = true;
-        for(int i = 0; i < len; i++){
-            if(i < len-1 && l[i+1] - l[i] == 1){
-                if(start == -1){
+        for(int i = 0; i < len; i++) {
+            if(i < len-1 && l[i+1] - l[i] == 1) {
+                if(start == -1) {
                     start = l[i];
                 }
                 end = l[i+1];
             }
             else{
-                if(start != -1){
-                    if(end - start > 1)
+                if(start != -1) {
+                    if(end - start > 1) {
                         sc.print((first ? "" : " ") + start + "-" + end);
-                    else
+                    } else {
                         sc.print((first ? "" : " ") + start + " " + end);
+                    }
                     start = -1;
-                }
-                else
+                } else {
                     sc.print((first ? "" : " ") + l[i]);
+                }
                 first = false;
             }
         }
