@@ -1,0 +1,1 @@
+main = interact (\l -> show $ sum $ map (read) $ words l)
