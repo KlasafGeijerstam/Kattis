@@ -11,6 +11,7 @@ fn main() {
     let mut characters: VecDeque<_> = (0..n)
         .map(|_| u32::from_str_radix(inp.next_line(), 2).unwrap())
         .collect();
+
     for &character in &characters {
         distances[character as usize] = 0;
     }
